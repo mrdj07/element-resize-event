@@ -1,10 +1,10 @@
 {
-  "name": "element-resize-event",
+  "name": "@cakemail/element-resize-event",
   "description": "Polyfill to make it easy to listen for element resize events",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
-    "url": "https://github.com/KyleAMathews/element-resize-event/issues"
+    "url": "https://github.com/mrdj07/element-resize-event/issues"
   },
   "devDependencies": {
     "browserify": "^8.1.3",
@@ -12,7 +12,7 @@
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.8.0"
   },
-  "homepage": "https://github.com/KyleAMathews/element-resize-event",
+  "homepage": "https://github.com/mrdj07/element-resize-event",
   "keywords": [
     "event",
     "resize",
@@ -23,7 +23,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KyleAMathews/element-resize-event.git"
+    "url": "https://github.com/mrdj07/element-resize-event.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
