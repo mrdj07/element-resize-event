@@ -29,9 +29,9 @@ function resizeListener(e) {
   }
   win.__resizeRAF__ = requestFrame(function () {
     var trigger = win.__resizeTrigger__
-    trigger.__resizeListeners__.forEach(function (fn) {
-      fn.call(trigger, e)
-    })
+      trigger && trigger.__resizeListeners__.forEach(function (fn) {
+        fn.call(trigger, e)
+      })
   })
 }
 
@@ -97,11 +97,13 @@ module.exports.unbind = function (element, fn) {
     if (attachEvent) {
       element.detachEvent('onresize', resizeListener)
     } else {
-      element.__resizeTrigger__.contentDocument.defaultView.removeEventListener(
-        'resize',
-        resizeListener
-      )
-      delete element.__resizeTrigger__.contentDocument.defaultView.__resizeTrigger__
+      if(element.__resizeTrigger__.contentDocument !== null){
+        element.__resizeTrigger__.contentDocument.defaultView.removeEventListener(
+          'resize',
+          resizeListener
+        )
+        delete element.__resizeTrigger__.contentDocument.defaultView.__resizeTrigger__
+      }
       element.__resizeTrigger__ = !element.removeChild(
         element.__resizeTrigger__
       )
